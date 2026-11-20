@@ -1,0 +1,253 @@
+
+/* =========================================
+   NAVBAR AAT - DESIGN PREMIUM
+========================================= */
+
+.aat-navbar {
+  background: #ccfcff;
+  height: 85px;
+  min-height: 85px;
+  padding: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-bottom: 2px solid rgba(18, 52, 90, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  transition: all 0.3s ease;
+  overflow: visible;
+}
+
+.aat-navbar > .container,
+.aat-navbar > .container-fluid {
+  min-height: 100%;
+}
+
+/* =========================================
+   LOGO AAT
+========================================= */
+
+.aat-brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: 240px;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.aat-logo {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 200px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+.aat-logo:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.aat-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+/* LIENS DE NAVIGATION */
+
+.aat-nav-link {
+  position: relative;
+  color: #172d45 !important;
+  font-size: 25px;
+  font-weight: 800 !important;
+  padding: 8px 10px !important;
+  letter-spacing: 0.3px;
+  text-decoration: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition: color 0.3s ease;
+}
+
+/* =========================================
+   SOULIGNEMENT ANIMÉ
+========================================= */
+
+.aat-nav-link::before {
+  display: none !important;
+}
+
+.aat-nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 4px;
+  bottom: 3px;
+  left: 50%;
+  background: #12345a;
+  border-radius: 10px;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.aat-nav-link:hover::after,
+.aat-nav-link.active::after {
+  width: 70%;
+}
+
+.aat-nav-link:hover,
+.aat-nav-link.active {
+  color: #12345a !important;
+}
+
+/* =========================================
+   BOUTON DÉCONNEXION
+========================================= */
+
+.aat-logout {
+  background: #12345a;
+  color: #ffffff;
+  border: 2px solid #12345a;
+  border-radius: 8px;
+  padding: 10px 22px;
+  margin-left: 15px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.aat-logout:hover {
+  background: #ffffff;
+  color: #12345a;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(18, 52, 90, 0.15);
+}
+
+/* =========================================
+   BOUTON MENU MOBILE
+========================================= */
+
+.aat-toggle {
+  border: 2px solid #12345a !important;
+  border-radius: 8px;
+  padding: 6px 10px;
+  box-shadow: none !important;
+}
+
+.aat-toggle:focus {
+  box-shadow: none !important;
+}
+
+/* =========================================
+   RESPONSIVE TABLETTE ET MOBILE
+========================================= */
+
+@media (max-width: 991px) {
+
+  .aat-navbar {
+    height: 80px;
+    min-height: 80px;
+    padding: 0;
+  }
+
+  .aat-brand {
+    width: 190px;
+  }
+
+  .aat-logo {
+    height: 70px;
+    max-width: 190px;
+  }
+
+  .aat-nav {
+    align-items: stretch !important;
+    gap: 5px;
+    padding: 20px 0;
+  }
+
+  .aat-nav-link {
+    font-size: 19px;
+    font-weight: 800 !important;
+    padding: 14px 15px !important;
+    text-align: center;
+  }
+
+  .aat-nav-link::after {
+    bottom: 3px;
+  }
+
+  .aat-nav-link:hover::after,
+  .aat-nav-link.active::after {
+    width: 45%;
+  }
+
+  .aat-logout {
+    margin: 12px 0 5px;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .aat-navbar .navbar-collapse {
+    background: #ccfcff;
+    padding: 0 15px;
+  }
+}
+
+/* =========================================
+   PETITS ÉCRANS
+========================================= */
+
+@media (max-width: 480px) {
+
+  .aat-navbar {
+    height: 75px;
+    min-height: 75px;
+  }
+
+  .aat-brand {
+    width: 160px;
+  }
+
+  .aat-logo {
+    height: 60px;
+    max-width: 160px;
+  }
+
+  .aat-nav-link {
+    font-size: 18px;
+  }
+}
+
+/* =========================================
+   ANIMATION D'APPARITION
+========================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  .aat-navbar {
+    animation: navbarAppear 0.6s ease;
+  }
+
+  @keyframes navbarAppear {
+    from {
+      opacity: 0;
+      transform: translateY(-12px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
