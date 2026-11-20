@@ -1,3 +1,5 @@
+# environement key
+.env.local
 # Logs
 logs
 *.log
