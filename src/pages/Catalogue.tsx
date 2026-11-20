@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+
 import VehicleCard from '../components/VehicleCard'
 import { getVehicles } from '../services/vehicleService'
 import { errorMessage } from '../lib/format'
